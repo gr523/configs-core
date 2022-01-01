@@ -1,0 +1,10 @@
+{
+	"suggest":{
+        "noselect": false,
+        "ultisnips.directories":["UltiSnips","$HOME/.config/nvim/UltiSnips"],
+        "snipmate.enable":false
+    },
+    "java.enabled":false,
+    "clangd.enabled":false,
+    "diagnostic.checkCurrentLine": true
+}
