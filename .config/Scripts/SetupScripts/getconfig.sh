@@ -1,37 +1,37 @@
 #!/bin/sh
 
 arr=(
-    ".config/nvim"
-    ".config/coc"
-    ".config/awesome"
-    ".config/Scripts"
-    ".config/redshift"
-    ".config/alacritty"
-    ".config/tmux"
-    ".config/rofi"
-    ".config/spectrwm"
-    ".config/openbox"
-    ".config/polybar"
-    ".config/terminator"
-    ".config/Configs"
-    ".config/aliases"
-    ".config/aliases_arch"
-    ".profile"
+    "nvim"
+    "awesome"
+    "Scripts"
+    "redshift"
+    "alacritty"
+    "tmux"
+    "rofi"
+    "Configs"
+    "aliases"
+    "aliases_arch"
+    "picom.conf"
 )
 
 shome="/shome"
+
+rsync -a "${shome}/.config/coc" ~/.config/
+
+cd
+ln -sf "${shome}/.profile"
+cp ~/.profile ~/.zprofile
 
 mkdir -p ~/.config
 
 cd ~/.config
 for i in ${arr[@]}; do
-    ln -sf "${shome}/$i" 
+    ln -sf "${shome}/.config/$i" 
 done
-
 
 mkdir -p ~/.local/share/
 cd ~/.local/share/
-ln -sf "${shome}/.local/share/zsh"
+cp -r "${shome}/.local/share/zsh" ./
 
 arr=(
     ".zshrc"
@@ -54,5 +54,4 @@ for i in ${arr[@]}; do
 done
 
 mkdir -p ~/.cache
-cd ~/.cache
-ln -sf "${shome}/.cache/gitstatus"
+cp -r "${shome}/.cache/gitstatus" ~/.cache/

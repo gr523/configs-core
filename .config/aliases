@@ -9,8 +9,8 @@ alias vman="vi -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' -c 'map <SPACE>
 # configs #
 alias vconf='nvim ~/.config/nvim/init.vim'
 alias zconf='nvim ~/.config/zsh/.zshrc'
-alias configs='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias configs_core='git --git-dir="${HOME}/configs-core" --work-tree=/shome'
+alias conc='git --git-dir=$HOME/configs-core --work-tree=/shome'
+alias cone='git --git-dir="${HOME}/configs-extra" --work-tree=${HOME}'
 # - #
 
 alias Wine="flatpak run --command=wine org.winehq.flatpak-wine"
