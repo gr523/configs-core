@@ -10,4 +10,6 @@ xmodmap -e 'keycode 108=Escape'
 exec picom &
 exec lxpolkit & 
 exec nm-applet &
+killall redshift
 exec redshift &
+exec light-locker &
