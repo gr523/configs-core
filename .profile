@@ -2,7 +2,7 @@ export ZAP_PATH=$HOME/.local/share/zap/bin
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$ZAP_PATH"
 export PYTHONPATH="$HOME/Codes/pythonScripts"
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
-   vi -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+    vi -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
     -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
     -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
 
@@ -39,9 +39,9 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 # fzf
 export FZF_CTRL_T_COMMAND="fd --ignore-file ~/.fdignore -t f -i -LHI $dir 2> /dev/null | sed 's@^\./@@'"
 export FZF_ALT_C_COMMAND="fd --ignore-file ~/.fdignore -i -t d -HLI  2> /dev/null | sed 's@^\./@@'"
- 
+
 TOUCHPAD=$(xinput list | grep -i touchpad | sed -n 's:.*id=\([0-9]\+\).*:\1:p')
 
-if [ -n ${TOUCHPAD} ]; then
-    xinput set-prop ${TOUCHPAD} "libinput Tapping Enabled" 1
+if [ -n "${DISPLAY}" ] && [ -n "${TOUCHPAD}" ]; then
+    exec touchegg &
 fi

@@ -27,6 +27,7 @@ autocmd FileType htc                     let b:comment_leader = ';'
 autocmd FileType oin                     let b:comment_leader = '!'
 autocmd FileType fast                    let b:comment_leader = '!'
 
+autocmd FileType lua                     let b:comment_leader = '--'
 
 " --- Possibility to change the comment leader used in the "middle" of a boxed
 autocmd FileType *             let b:comment_leader_box ='' 

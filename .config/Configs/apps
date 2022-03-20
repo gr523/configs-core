@@ -4,9 +4,9 @@ fzf
 npm
 plocate
 reflector
-rp-ppoe
+rp-pppoe
 lxappearance
-lxsession-gtk3
+lxsession
 nm-connection-editor
 bleachbit
 alacritty
@@ -31,6 +31,7 @@ procs
 nethogs
 bat
 fd
+dust
 gpicview
 xorg-xev
 xorg-xinput
@@ -41,3 +42,4 @@ rclone
 jpegoptim
 time
 light-locker
+arandr

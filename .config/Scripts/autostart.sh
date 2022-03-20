@@ -5,7 +5,7 @@ run() {
 }
 
 nitrogen --restore
-xinput disable "AT Translated Set 2 keyboard"
+# xinput disable "AT Translated Set 2 keyboard"
 xmodmap -e 'keycode 108=Escape'
 exec picom &
 exec lxpolkit & 

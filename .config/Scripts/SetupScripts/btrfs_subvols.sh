@@ -20,6 +20,6 @@ done
 
 mount -o subvol="@flatpak",compress=lzo,space_cache=v2,noatime,x-mount.mkdir -L arch /mnt/var/lib/flatpak;
 
-mount -L EFI -o x-mount.mkdir /mnt/efi
+mount -L EFI_ARCH -o x-mount.mkdir /mnt/efi
 
 lsblk
