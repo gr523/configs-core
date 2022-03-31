@@ -12,6 +12,7 @@ SAVEHIST=1000
 setopt HIST_IGNORE_ALL_DUPS
 setopt histignorespace
 
+unsetopt beep
 
 setopt extendedglob correct
 bindkey -v
