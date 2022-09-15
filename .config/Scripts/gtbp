@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -aP hp:~/.config/BraveSoftware/Brave-Browser/Default/ ~/.config/BraveSoftware/Brave-Browser/Profile\ 1/

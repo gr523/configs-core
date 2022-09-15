@@ -1,0 +1,11 @@
+[Unit]
+Description=Pre-Reboot Processes
+DefaultDependencies=no
+Before=reboot.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c "modprobe -r mt7921e"
+
+[Install]
+WantedBy=reboot.target

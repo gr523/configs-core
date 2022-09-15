@@ -61,7 +61,7 @@ rbak(){
 
 alias update_zsh_plugins="PREV=\$(pwd);for i in \$(cat ~/.config/zsh/plugins | cut -d '/' -f5 | sed 's/.git//g'); do cd ~/.local/share/zsh/plugins/\$i; git pull origin master; done; cd \$PREV"
 
-alias precompile_bits_header="g++ --std=c++20 -x c++-header -fsanitize=undefined /usr/include/c++/11.1.0/x86_64-pc-linux-gnu/bits/stdc++.h"
+alias precompile_dbg="sudo g++ -D LOCAL -D DBG_MACRO_NO_WARNING --std=c++20 -fsanitize=undefined -x c++-header /usr/include/dbg.h"
 
 # ip5
 alias limit_charge="echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
@@ -71,3 +71,4 @@ alias cycle_count="cat /sys/class/power_supply/BAT1/cycle_count"
 alias power_balance="echo 'balanced' | sudo tee /sys/firmware/acpi/platform_profile"
 alias power_high="echo 'performance' | sudo tee /sys/firmware/acpi/platform_profile"
 alias power_low="echo 'low-power' | sudo tee /sys/firmware/acpi/platform_profile"
+alias power_cur="cat /sys/firmware/acpi/platform_profile"

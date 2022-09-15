@@ -1,0 +1,12 @@
+[Unit]
+Before=suspend-then-hibernate.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/modprobe -r mt7921e
+ExecStop=/bin/modprobe mt7921e
+
+[Install]
+WantedBy=suspend-then-hibernate.target

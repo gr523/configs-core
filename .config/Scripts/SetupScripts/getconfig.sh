@@ -20,7 +20,7 @@ rsync -a "${shome}/.config/coc" ~/.config/
 
 cd
 ln -sf "${shome}/.profile"
-cp ~/.profile ~/.zprofile
+# cp ~/.profile ~/.zprofile
 
 mkdir -p ~/.config
 

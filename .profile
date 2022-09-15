@@ -1,5 +1,4 @@
-export ZAP_PATH=$HOME/.local/share/zap/bin
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$ZAP_PATH"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 export PYTHONPATH="$HOME/Codes/pythonScripts"
 export MANPAGER="/bin/sh -c \"unset MANPAGER;col -b -x | \
     vi -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
@@ -43,5 +42,6 @@ export FZF_ALT_C_COMMAND="fd --ignore-file ~/.fdignore -i -t d -HLI  2> /dev/nul
 TOUCHPAD=$(xinput list | grep -i touchpad | sed -n 's:.*id=\([0-9]\+\).*:\1:p')
 
 if [ -n "${DISPLAY}" ] && [ -n "${TOUCHPAD}" ]; then
+    killall touchegg
     exec touchegg &
 fi

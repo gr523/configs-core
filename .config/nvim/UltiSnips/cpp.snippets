@@ -116,7 +116,7 @@ ll countdivisors(ll n){
 			c=1;
 			while(n%primes[i]==0){
 				n/=primes[i];
-				.c++,source.c;
+				c++;
 			}
 			total*=c;
 		}
@@ -135,9 +135,17 @@ endsnippet
 
 
 snippet cpp
+#ifdef LOCAL
+#include <dbg.h>
+#else
 #include <bits/stdc++.h>
+#define dbg(...)
+#define sdbg(...)
+#endif
+
 #define ll long long 
 using namespace std;
+
 int main(){
 	${1:}
 }
@@ -169,12 +177,6 @@ endsnippet
 
 
 
-snippet .eb
-emplace_back(${1:tmp});
-endsnippet
-
-
-
 snippet fast
 ios_base::sync_with_stdio(0),cin.tie(0);
 endsnippet
@@ -183,13 +185,6 @@ endsnippet
 
 snippet forone "For Loop"
 for(int ${2:i}=1;$2<=${1:n};${3:++$2}){
-}
-endsnippet
-
-
-
-snippet forsimple
-for(auto &i:${1:arr}){
 }
 endsnippet
 
@@ -208,7 +203,7 @@ endsnippet
 
 
 snippet jfor
-for(int i=0;i<${1:n};i++) 
+for(int j=0;j<${1:n};j++) 
 endsnippet
 
 
@@ -251,12 +246,11 @@ endsnippet
 
 
 snippet mod_lqa
-ll lqa(ll *arr,int n,ll value){
-	ll i=lower_bound(arr,arr+n,value)-arr;
-	if(i==0 && arr[i]>value) return -1;
-	if(i==n) i--;
-	if(arr[i]>value && i) i--;	
-	return i;
+template<typename T>
+int lqa(T *arr,int n,T value){
+	int i=upper_bound(arr,arr+n,value)-arr;
+	i--;
+	return (i>=0? i : -1);
 }
 endsnippet
 
@@ -368,13 +362,13 @@ endsnippet
 
 
 
-snippet pb
-push_back(${1:tmp});
+snippet bgen
+${1:arr}.begin(),${1:arr}.end()
 endsnippet
 
 
 
-snippet reversesort
+snippet rsort
 sort(${1:arr},${1:arr}+n,greater<ll>());
 endsnippet
 
@@ -389,6 +383,12 @@ endsnippet
 
 snippet rjfor
 for(int i=${1:n}-1;i>=0;i--) 
+endsnippet
+
+
+
+snippet rnjfor
+for(int i=${1:n};i>0;i--) 
 endsnippet
 
 
