@@ -61,7 +61,7 @@ rbak(){
 
 alias update_zsh_plugins="PREV=\$(pwd);for i in \$(cat ~/.config/zsh/plugins | cut -d '/' -f5 | sed 's/.git//g'); do cd ~/.local/share/zsh/plugins/\$i; git pull origin master; done; cd \$PREV"
 
-alias precompile_dbg="sudo g++ -D LOCAL -D DBG_MACRO_NO_WARNING --std=c++20 -fsanitize=undefined -x c++-header /usr/include/dbg.h"
+alias precompile_dbg="g++ -D LOCAL -D DBG_MACRO_NO_WARNING --std=c++20 -fsanitize=undefined -x c++-header ~/Codes/include/dbg.h"
 
 # ip5
 alias limit_charge="echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
