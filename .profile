@@ -45,3 +45,9 @@ if [ -n "${DISPLAY}" ] && [ -n "${TOUCHPAD}" ]; then
     killall touchegg
     exec touchegg &
 fi
+
+
+export CPP_COMPILE_FLAGS="-D LOCAL -D DBG_MACRO_NO_WARNING -D_GLIBCXX_DEBUG \
+--std=c++20 -Wall -Wshadow -Wfloat-equal -Wconversion \
+-Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align \
+-fsanitize=undefined -fno-sanitize-recover -fstack-protector"
