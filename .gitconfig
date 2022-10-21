@@ -1,0 +1,10 @@
+[alias]
+	sc = clone --depth 1
+	cma = commit --amend --no-edit
+[user]
+	email = renzhamin@gmail.com
+	name = renzhamin
+[init]
+	defaultBranch = main
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
