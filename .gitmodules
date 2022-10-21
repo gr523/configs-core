@@ -1,9 +1,9 @@
 [submodule "awesome"]
 	path = .config/awesome
-	url = git@github.com:renzhamin/configs-awesome
-    branch = master
+	url = https://github.com/renzhamin/configs-awesome
+    branch = main
 
 [submodule "neovim"]
 	path = .config/nvim
-	url = git@github.com:renzhamin/configs-neovim
-    branch = master
+    url = https://github.com/renzhamin/configs-neovim
+    branch = main
