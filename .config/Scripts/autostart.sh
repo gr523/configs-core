@@ -12,4 +12,5 @@ exec lxpolkit &
 exec nm-applet &
 killall redshift
 exec redshift &
+xset r rate 210  35
 exec light-locker &

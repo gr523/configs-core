@@ -1,3 +1,8 @@
+alias pn='pnpm'
+# vim: set ft=zsh:
+# [ -f /usr/bin/trash ] && alias rm='trash'
+alias vt='XDG_CONFIG_HOME="~/Test/neovim/" XDG_DATA_HOME="/home/renzhamin/Test/neovim/data" vi'
+
 alias hdmi='xrandr --output HDMI-A-0 --scale 1.167x1.29 --mode 1920x1080 --same-as eDP'
 alias ls='ls -h --color'
 alias ll='ls -alh'
@@ -7,8 +12,10 @@ alias ramclean='sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"'
 alias dt="date +'%a-%b%d-%Y'"
 alias vman="vi -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' -c 'map <SPACE> <C-D>' -c 'map b <C-U>' -c 'nmap K :Man <C-R>=expand(\"<cword>\")<CR><CR>' -"
 
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
 # configs #
-alias vconf='nvim ~/.config/nvim/init.vim'
+alias vconf='nvim ~/.config/nvim/init.lua'
 alias zconf='nvim ~/.config/zsh/.zshrc'
 alias conc='git --git-dir="${HOME}/configs-core" --work-tree=/shome'
 alias cone='git --git-dir="${HOME}/configs-extra" --work-tree=${HOME}'
@@ -60,6 +67,10 @@ rbak(){
     mv ${1}.bak ${1}
 }
 
+man(){
+    /usr/bin/man $1 | nvim -c 'set ft=man nomod nolist' -c 'nmap i <nop>'
+}
+
 alias update_zsh_plugins="PREV=\$(pwd);for i in \$(cat ~/.config/zsh/plugins | cut -d '/' -f5 | sed 's/.git//g'); do cd ~/.local/share/zsh/plugins/\$i; git pull origin master; done; cd \$PREV"
 
 alias precompile_dbg="g++ \${CPP_COMPILE_FALGS} -x c++-header ~/Codes/include/dbg.h"
@@ -67,6 +78,8 @@ alias precompile_dbg="g++ \${CPP_COMPILE_FALGS} -x c++-header ~/Codes/include/db
 # ip5
 alias limit_charge="echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
 alias full_charge="echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+alias rapid_on="full_charge;echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x07' | sudo tee /proc/acpi/call"
+alias rapid_off="limit_charge;echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x08' | sudo tee /proc/acpi/call"
 alias cur_power="awk '{print \$1*10^-6 \" W\"}' \"/sys/class/power_supply/BAT1/power_now\""
 alias cycle_count="cat /sys/class/power_supply/BAT1/cycle_count"
 alias power_balance="echo 'balanced' | sudo tee /sys/firmware/acpi/platform_profile"
